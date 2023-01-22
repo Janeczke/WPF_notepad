@@ -1,0 +1,46 @@
+﻿<Window x:Class="BasicWpfNotepad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BasicWpfNotepad"
+        mc:Ignorable="d"
+        Title="Fajny Notatnik" Height="700" Width="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="0">
+            <TextBox AcceptsReturn="True" TextWrapping="Wrap" BorderThickness="0" Padding="15" x:Name="TextArea"></TextBox>
+        </ScrollViewer>
+
+        <Grid Grid.Column="1" Background="LightGray">
+            <StackPanel Margin="10">
+                <ToolBar>
+                    <Button Content="Open" Click="OpenBtn_Click" Height="23" Width="75" />
+                    <Button Content="Save" Click="SaveBtn_Click" Height="23" Width="75 " />
+                </ToolBar>
+                <ToolBar>
+                    <Button Content="Copy" Command="ApplicationCommands.Copy" Height="23" Width="75"/>
+                    <Button Content="Cut" Command="ApplicationCommands.Cut" Height="23" Width="75"/>
+                    <Button Content="Paste" Command="ApplicationCommands.Paste" Height="23" Width="75"/>
+                </ToolBar>
+                <ToolBar>
+                    <Button Content="Arial" Height="23" Width="75" Click="Button_Click" />
+                    <Button Content="Times New Roman" Height="23" Width="120" Click="Button_Click1" />
+                    <Button Content="Comic Sans MS" Height="23" Width="120" Click="Button_Click2" />
+                    <Button Content="Shruti" Height="23" Width="120" Click="Button_Click3" />
+                </ToolBar>
+                <ToolBar>
+                    <Button Content="10" Height="23" Width="75" Click="font_Click10" />
+                    <Button Content="20" Height="23" Width="75" Click="font_Click20" />
+                    <Button Content="30" Height="23" Width="75" Click="font_Click30" />
+                    <Button Content="40" Height="23" Width="75" Click="font_Click40" />
+                    <Button Content="50" Height="23" Width="75" Click="font_Click40" />
+                </ToolBar>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
